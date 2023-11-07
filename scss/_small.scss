@@ -1,0 +1,172 @@
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  height: 100%;
+}
+
+/*---- apply a natural box layout model to all elements -------*/
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: $defaultFont;
+  font-weight: $normalWeight;
+  color: $fontColor;
+  background-color: rgb(151, 59, 59);
+}
+
+#pageWrapper {
+  position: relative;
+  overflow-x: hidden;
+}
+.moveOver > .content {
+  transform: translateX(-180px);
+}
+.content {
+  transition: transform 500ms ease;
+}
+
+#headerWrapper {
+  background-color: #241818;
+  color: $secondaryColor;
+}
+
+/* START OF HEADER */
+
+header {
+  display: grid;
+  grid-template-columns: 51px auto 48px;
+  align-items: center;
+  padding: 0.5rem 2vw;
+  h1 {
+    font-size: 1.2rem;
+    font-weight: $lightWeight;
+    padding-left: 0.5rem;
+    color: $primaryColor;
+  }
+  button {
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    align-self: start;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    text-align: right;
+    color: #444;
+  }
+}
+
+/* START OF NAVIGATION */
+nav {
+  background: #eee;
+  width: 180px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateX(100%);
+  div {
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    background-color: #666;
+    color: #fff;
+  } // end div
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  ul li a {
+    display: block;
+    padding: 0.9rem 0.5rem;
+    text-align: right;
+    border-bottom: 1px rgba(0, 0, 0, 0.25) solid;
+    text-decoration: none;
+    color: black;
+  } // end anchors
+  ul li a:hover {
+    background-color: $secondaryColor;
+    color: #eee;
+  } // end hover
+  li.active a {
+    color: $primaryColor;
+  }
+}
+
+main {
+  margin-left: $gutter;
+  margin-right: $gutter;
+}
+
+// START OF CARDS
+#cards {
+  section {
+    margin-bottom: 1.2rem;
+    padding: 0.8rem;
+    background-color: #cfc7b5c1;
+    border: 1px solid gold;
+    border-radius: 0.4rem;
+    display: grid;
+    grid-template-areas:
+      "name"
+      "photo"
+      "address"
+      "phone";
+  }
+  h2 {
+    grid-area: name;
+    margin-top: 0.4rem;
+    color: gold;
+    text-shadow: 0 2px 4px rgba(45, 45, 45, 0.669);
+  }
+  img {
+    grid-area: photo;
+    width: 100%;
+    height: auto;
+    border-radius: 0.4rem;
+    box-shadow: 0 2px 4px rgba(45, 45, 45, 0.669);
+  }
+  address {
+    grid-area: address;
+    margin-top: 0.8rem;
+  }
+  a {
+    grid-area: phone;
+    background-color: rgb(39, 187, 207);
+    padding: 0.9rem;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 0.4rem;
+    text-align: center;
+    margin-top: 0.7rem;
+    transition: box-shadow 250ms ease-out;
+    text-decoration: none;
+    color: #333333;
+    font-weight: $boldWeight;
+  }
+  a:hover {
+    box-shadow: 0 0 5px rgba(45, 45, 45, 0.669);
+    transition: box-shadow 250ms ease;
+  }
+} // END OF CARDS
+
+// Begin of footer
+#footerWrapper {
+  background-color: #01b2d6;
+}
+footer {
+  padding: 0.5rem $gutter;
+  p {
+    color: #241818;
+    margin: 0;
+    font-weight: $lightWeight;
+    text-align: center;
+  }
+}
