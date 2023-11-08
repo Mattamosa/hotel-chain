@@ -15,13 +15,13 @@ export const hotels = [
     "name": "Cabo San Lucas",
     "photo": "3.webp",
     "address": ["Carretera Transpeninsular Km. 17.5 Corredor Turístico","Cabo San Lucas 23405 Mexico"],
-    "phone": "011 52 800 931 6023"
+    "phone": "+011 52 800 931 6023"
   },
   {
     "name": "Rome",
     "photo": "4.webp",
     "address": ["Via Nazionale 22","00184 Rome Italy"],
-    "phone": "011 39 06 489911"
+    "phone": "+011 39 06 489911"
   },
   {
     "name": "Paris",
