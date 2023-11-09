@@ -327,10 +327,10 @@ html {
 
 body {
   height: 100%;
-  font-family: "Hanken Grotesk", sans-serif;
-  font-weight: 500;
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
   color: #241818;
-  background-color: rgb(151, 59, 59);
+  background-color: #664141;
 }
 
 #pageWrapper {
@@ -347,8 +347,15 @@ body {
 }
 
 #headerWrapper {
-  background-color: #241818;
+  background-color: #313131;
   color: #e2e2e2;
+}
+
+div#pageWrapper.moveOver div.content nav div {
+  color: #ffd700;
+  font-weight: 700;
+  font-size: 1rem;
+  text-shadow: 0 2px 4px rgba(45, 45, 45, 0.669);
 }
 
 /* START OF HEADER */
@@ -357,28 +364,33 @@ header {
   grid-template-columns: 51px auto 48px;
   align-items: center;
   padding: 0.5rem 2vw;
+  margin-left: 0.3rem;
 }
 header h1 {
-  font-size: 1.2rem;
-  font-weight: 300;
-  padding-left: 0.5rem;
-  color: #919191;
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding-top: 1rem;
+  padding-left: 0.2rem;
+  color: #ffd700;
+  margin-bottom: 0;
 }
 header button {
   width: 48px;
   height: 48px;
   margin: 0;
-  align-self: start;
+  align-self: center;
   background: none;
   border: none;
   font-size: 1.5rem;
   text-align: right;
-  color: #444;
+  color: rgba(255, 217, 0, 0.737254902);
+  padding-right: 0.5rem;
+  padding-top: 1.55rem;
 }
 
 /* START OF NAVIGATION */
 nav {
-  background: #eee;
+  background: #ffdd1b;
   width: 180px;
   position: absolute;
   top: 0;
@@ -391,7 +403,7 @@ nav div {
   text-align: center;
   padding: 1.5rem;
   font-size: 1.1rem;
-  background-color: #666;
+  background-color: #887c7c;
   color: #fff;
 }
 nav ul {
@@ -405,25 +417,33 @@ nav ul li a {
   border-bottom: 1px rgba(0, 0, 0, 0.25) solid;
   text-decoration: none;
   color: black;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  transition: background 0.3s linear;
 }
 nav ul li a:hover {
-  background-color: #e2e2e2;
-  color: #eee;
+  background-color: #bd9f00;
 }
 nav li.active a {
-  color: #919191;
+  background-color: #dbb900;
 }
 
-main {
+main,
+main h1 {
   margin-left: 10px;
   margin-right: 10px;
+}
+
+main h1 {
+  color: #ffd700;
+  font-family: "Montserrat", sans-serif;
 }
 
 #cards section {
   margin-bottom: 1.2rem;
   padding: 0.8rem;
-  background-color: rgba(207, 199, 181, 0.7568627451);
-  border: 1px solid gold;
+  background-color: rgba(152, 152, 152, 0.6862745098);
+  border: 1px solid #ffd700;
   border-radius: 0.4rem;
   display: grid;
   grid-template-areas: "name" "photo" "address" "phone";
@@ -431,8 +451,9 @@ main {
 #cards h2 {
   grid-area: name;
   margin-top: 0.4rem;
-  color: gold;
+  color: #ffd700;
   text-shadow: 0 2px 4px rgba(45, 45, 45, 0.669);
+  font-family: "Montserrat", sans-serif;
 }
 #cards img {
   grid-area: photo;
@@ -444,19 +465,22 @@ main {
 #cards address {
   grid-area: address;
   margin-top: 0.8rem;
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  font-family: montserrat;
 }
 #cards a {
   grid-area: phone;
-  background-color: rgb(39, 187, 207);
+  background-color: rgba(255, 217, 0, 0.8);
   padding: 0.9rem;
-  border: 1px solid rgb(0, 0, 0);
   border-radius: 0.4rem;
   text-align: center;
   margin-top: 0.7rem;
   transition: box-shadow 250ms ease-out;
   text-decoration: none;
-  color: #333333;
-  font-weight: 700;
+  color: #000000;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
 }
 #cards a:hover {
   box-shadow: 0 0 5px rgba(45, 45, 45, 0.669);
@@ -464,22 +488,22 @@ main {
 }
 
 #footerWrapper {
-  background-color: #01b2d6;
+  background-color: #313131;
 }
 
 footer {
   padding: 0.5rem 10px;
 }
 footer p {
-  color: #241818;
+  color: #ffd700;
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
 }
 
 @media only screen and (min-width: 35rem) {
   header {
-    padding: 2rem 10px;
+    padding: 1rem 10px;
   }
   header h1 {
     font-size: 2rem;
@@ -489,6 +513,16 @@ footer p {
     grid-template-columns: 288px auto;
     -moz-column-gap: 8px;
          column-gap: 8px;
+  }
+  #cards h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+  }
+  #cards address {
+    font-size: 1.1rem;
+  }
+  #cards a {
+    padding-bottom: 0;
   }
 }
 @media only screen and (min-width: 60rem) {
@@ -507,6 +541,8 @@ footer p {
     position: static;
     transform: translateX(0);
     width: auto;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
   }
   nav div {
     display: none;
@@ -530,7 +566,21 @@ footer p {
     margin: 1rem;
     margin-bottom: 2.3rem;
   }
+  #cards section h2 {
+    margin-bottom: 0;
+    font-size: 1.26rem;
+  }
+  #cards section img {
+    margin-right: 0.3rem;
+  }
   #cards section address {
-    padding-right: 0.4rem;
+    padding-right: 0.2rem;
+    margin-top: 0;
+    font-size: 1rem;
+  }
+  #cards section a {
+    padding-top: 1.3rem;
+    padding-right: 0;
+    padding-left: 0;
   }
 }

@@ -14,7 +14,7 @@ export const hotels = [
   {
     "name": "Cabo San Lucas",
     "photo": "3.webp",
-    "address": ["Carretera Transpeninsular Km. 17.5 Corredor Turístico","Cabo San Lucas 23405 Mexico"],
+    "address": ["Carretera Turístico","Cabo San Lucas 23405 Mexico"],
     "phone": "+011 52 800 931 6023"
   },
   {
@@ -38,7 +38,7 @@ export const hotels = [
   {
     "name": "Bangkok",
     "photo": "7.webp",
-    "address": ["372 Sri Ayutthaya Road","Thanon Phyathai Rajthevi, Bangkok 10400 Thailand"],
+    "address": ["372 Sri Ayutthaya","Thanon Phyathai Rajthevi, Bangkok 10400 Thailand"],
     "phone": "+66 (0) 2248 5511-15"
   },
   {
